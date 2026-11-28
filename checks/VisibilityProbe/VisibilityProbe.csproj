@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>VisibilityProbe</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup><Reference Include="UnityEngine.PhysicsModule" HintPath="$(ManagedRoot)/UnityEngine.PhysicsModule.dll" Private="false" />
+    <Reference Include="UnityEngine.ImageConversionModule" HintPath="$(ManagedRoot)/UnityEngine.ImageConversionModule.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(BepInExCore)/0Harmony.dll" Private="false" />
+  </ItemGroup>
+</Project>

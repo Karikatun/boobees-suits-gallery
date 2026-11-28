@@ -1,0 +1,49 @@
+{
+  "method": "Propose\u2013Probe\u2013Compose methodology only",
+  "testedOutfits": {
+    "sneaker": {
+      "Stand": {
+        "inputAngles": 37,
+        "observedHeadPitch": [
+          -37.57,
+          42.62
+        ],
+        "continuousFrames": 294,
+        "maxAbdomenAnchorError": 7e-07,
+        "maxScarfAnchorError": 0.0
+      },
+      "Crouch": {
+        "inputAngles": 37,
+        "observedHeadPitch": [
+          -20.02,
+          20.43
+        ],
+        "continuousFrames": 294,
+        "maxAbdomenAnchorError": 9e-07,
+        "maxScarfAnchorError": 0.0
+      }
+    },
+    "winter": {
+      "Stand": {
+        "inputAngles": 37,
+        "observedHeadPitch": [
+          -37.61,
+          42.68
+        ],
+        "continuousFrames": 294,
+        "maxAbdomenAnchorError": 7e-07,
+        "maxScarfAnchorError": 7e-07
+      },
+      "Crouch": {
+        "inputAngles": 37,
+        "observedHeadPitch": [
+          -20.02,
+          20.44
+        ],
+        "continuousFrames": 294,
+        "maxAbdomenAnchorError": 6e-07,
+        "maxScarfAnchorError": 6e-07
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "hat": {
+    "slot": "Hat",
+    "meshyTriangles": 33551,
+    "fittedTriangles": 2756,
+    "removedDuplicateFaces": 1,
+    "crouchTriangles": null,
+    "localBlenderBounds": [
+      [
+        -0.27629,
+        -0.56154,
+        0.22668
+      ],
+      [
+        0.36068,
+        -0.0292,
+        0.55829
+      ]
+    ],
+    "emissivePixels": 220583,
+    "heightReductionPercent": 27.0
+  },
+  "scarf": {
+    "slot": "BodyTop",
+    "meshyTriangles": 33444,
+    "fittedTriangles": 1767,
+    "removedDuplicateFaces": 6,
+    "crouchTriangles": null,
+    "localBlenderBounds": [
+      [
+        -0.28851,
+        -0.38917,
+        0.20087
+      ],
+      [
+        0.28934,
+        0.31568,
+        0.40226
+      ]
+    ]
+  },
+  "sweater": {
+    "slot": "BodyTop",
+    "meshyTriangles": 33130,
+    "fittedTriangles": 5120,
+    "removedDuplicateFaces": 0,
+    "crouchTriangles": 1792,
+    "localBlenderBounds": [
+      [
+        -0.33071,
+        -0.3558,
+        -0.152
+      ],
+      [
+        0.33025,
+        0.349,
+        0.365
+      ]
+    ]
+  },
+  "sleeve-left": {
+    "slot": "ArmLeft",
+    "meshyTriangles": 32696,
+    "fittedTriangles": 1512,
+    "removedDuplicateFaces": 0,
+    "crouchTriangles": null,
+    "localBlenderBounds": [
+      [
+        -0.563,
+        -0.08951,
+        -0.08901
+      ],
+      [
+        0.102,
+        0.08954,
+        0.08916
+      ]
+    ]
+  },
+  "sleeve-right": {
+    "slot": "ArmRight",
+    "meshyTriangles": 33293,
+    "fittedTriangles": 1512,
+    "removedDuplicateFaces": 0,
+    "crouchTriangles": null,
+    "localBlenderBounds": [
+      [
+        -0.102,
+        -0.091,
+        -0.08957
+      ],
+      [
+        0.563,
+        0.08875,
+        0.091
+      ]
+    ]
+  },
+  "abdomen": {
+    "slot": "BodyTopOverlay",
+    "meshyTriangles": 33444,
+    "fittedTriangles": 2944,
+    "removedDuplicateFaces": 0,
+    "crouchTriangles": 1280,
+    "localBlenderBounds": [
+      [
+        -0.36,
+        -0.373,
+        -0.402
+      ],
+      [
+        0.36005,
+        0.37564,
+        -0.039
+      ]
+    ]
+  },
+  "wings": {
+    "slot": "BodyTop",
+    "meshyTriangles": 31252,
+    "fittedTriangles": 2757,
+    "removedDuplicateFaces": 0,
+    "crouchTriangles": null,
+    "localBlenderBounds": [
+      [
+        -0.5059,
+        0.22156,
+        0.03167
+      ],
+      [
+        0.50638,
+        0.37088,
+        0.39413
+      ]
+    ]
+  },
+  "boot-left": {
+    "slot": "FootLeft",
+    "meshyTriangles": 32901,
+    "fittedTriangles": 3741,
+    "removedDuplicateFaces": 2,
+    "crouchTriangles": null,
+    "localBlenderBounds": [
+      [
+        -0.09159,
+        -0.17686,
+        -0.56452
+      ],
+      [
+        0.09182,
+        0.08024,
+        -0.34321
+      ]
+    ]
+  },
+  "boot-right": {
+    "slot": "FootRight",
+    "meshyTriangles": 33312,
+    "fittedTriangles": 3740,
+    "removedDuplicateFaces": 2,
+    "crouchTriangles": null,
+    "localBlenderBounds": [
+      [
+        -0.09092,
+        -0.17571,
+        -0.5646
+      ],
+      [
+        0.09052,
+        0.08098,
+        -0.34472
+      ]
+    ]
+  }
+}

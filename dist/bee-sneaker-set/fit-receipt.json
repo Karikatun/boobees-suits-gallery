@@ -1,0 +1,154 @@
+{
+  "antennae": {
+    "slot": "Hat",
+    "meshyTriangles": 53920,
+    "fittedTriangles": 886,
+    "localBlenderBounds": [
+      [
+        -0.22989,
+        -0.31418,
+        0.34017
+      ],
+      [
+        0.23021,
+        -0.27083,
+        0.58398
+      ]
+    ],
+    "crouchTriangles": null,
+    "materialCount": 1
+  },
+  "sweater": {
+    "slot": "BodyTop",
+    "meshyTriangles": 5283778,
+    "fittedTriangles": 5120,
+    "localBlenderBounds": [
+      [
+        -0.33071,
+        -0.3558,
+        -0.152
+      ],
+      [
+        0.33025,
+        0.349,
+        0.365
+      ]
+    ],
+    "crouchTriangles": 1792,
+    "materialCount": 1
+  },
+  "sleeve-left": {
+    "slot": "ArmLeft",
+    "meshyTriangles": 67222,
+    "fittedTriangles": 1512,
+    "localBlenderBounds": [
+      [
+        -0.563,
+        -0.08951,
+        -0.08901
+      ],
+      [
+        0.102,
+        0.08954,
+        0.08916
+      ]
+    ],
+    "crouchTriangles": null,
+    "materialCount": 1
+  },
+  "sleeve-right": {
+    "slot": "ArmRight",
+    "meshyTriangles": 114178,
+    "fittedTriangles": 1512,
+    "localBlenderBounds": [
+      [
+        -0.102,
+        -0.091,
+        -0.08957
+      ],
+      [
+        0.563,
+        0.08875,
+        0.091
+      ]
+    ],
+    "crouchTriangles": null,
+    "materialCount": 1
+  },
+  "abdomen": {
+    "slot": "BodyTopOverlay",
+    "meshyTriangles": 98874,
+    "fittedTriangles": 2944,
+    "localBlenderBounds": [
+      [
+        -0.36,
+        -0.373,
+        -0.402
+      ],
+      [
+        0.36005,
+        0.37564,
+        -0.039
+      ]
+    ],
+    "crouchTriangles": 1280,
+    "materialCount": 1
+  },
+  "wings": {
+    "slot": "BodyTop",
+    "meshyTriangles": 500114,
+    "fittedTriangles": 2166,
+    "localBlenderBounds": [
+      [
+        -0.50591,
+        0.22116,
+        0.03187
+      ],
+      [
+        0.50477,
+        0.37237,
+        0.39447
+      ]
+    ],
+    "crouchTriangles": null,
+    "materialCount": 1
+  },
+  "shoe-left": {
+    "slot": "FootLeft",
+    "meshyTriangles": 557382,
+    "fittedTriangles": 5122,
+    "localBlenderBounds": [
+      [
+        -0.08828,
+        -0.16893,
+        -0.56395
+      ],
+      [
+        0.08834,
+        0.07877,
+        -0.35903
+      ]
+    ],
+    "crouchTriangles": null,
+    "materialCount": 1
+  },
+  "shoe-right": {
+    "slot": "FootRight",
+    "meshyTriangles": 623214,
+    "fittedTriangles": 5122,
+    "localBlenderBounds": [
+      [
+        -0.08803,
+        -0.16859,
+        -0.56398
+      ],
+      [
+        0.08856,
+        0.07908,
+        -0.35889
+      ]
+    ],
+    "crouchTriangles": null,
+    "materialCount": 1
+  }
+}

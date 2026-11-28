@@ -1,0 +1,12 @@
+{
+  "archive": "BoobeesSuits-0.5.6.zip",
+  "archiveBytes": 13053499,
+  "archiveSha256": "1DE6F43D9BBC9E2984EA5AEF077879DF32C9C3EC427C697D4D80BE329DED65A3",
+  "changed": [
+    "BoobeesSuits.Winter-boot-right.png",
+    "BoobeesSuits.Assets.Winter.bin.gz"
+  ],
+  "removed": "BoobeesSuits.Assets.Winter-boot-right.jpg",
+  "unchanged": 49,
+  "harness2": "Methodology only"
+}

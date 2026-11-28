@@ -1,0 +1,38 @@
+[
+  {
+    "pose": "crouch",
+    "exposedOld": 44,
+    "exposedNew": 0,
+    "sweaterMargin": 0.055
+  },
+  {
+    "pose": "crouch-down",
+    "exposedOld": 44,
+    "exposedNew": 0,
+    "sweaterMargin": 0.055
+  },
+  {
+    "pose": "crouch-up",
+    "exposedOld": 44,
+    "exposedNew": 0,
+    "sweaterMargin": 0.055
+  },
+  {
+    "pose": "stand",
+    "exposedOld": 44,
+    "exposedNew": 0,
+    "sweaterMargin": 0.05
+  },
+  {
+    "pose": "stand-down",
+    "exposedOld": 44,
+    "exposedNew": 0,
+    "sweaterMargin": 0.05
+  },
+  {
+    "pose": "stand-up",
+    "exposedOld": 44,
+    "exposedNew": 0,
+    "sweaterMargin": 0.05
+  }
+]
