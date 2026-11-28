@@ -25,7 +25,7 @@ Import the ZIP as a local mod in your R.E.P.O. mod manager. The target setup is 
 
 ## Build
 
-Run `tools/build.ps1` with PowerShell 7 and the .NET SDK. Supply `-GameRoot`, `-BepInExCore` and `-RepoLibPath` as needed. The build embeds the outfit meshes, textures and icons, then writes the Thunderstore ZIP to `dist/`.
+Run `./tools/build.ps1` from the repository root with PowerShell 7 and .NET SDK 8 or later. The first build downloads and verifies pinned public compile-time dependencies. The build embeds the outfit meshes, textures and icons, then writes the Thunderstore ZIP to `dist/`. To build against an installed copy of the game, see the local build command in [AGENTS.md](AGENTS.md).
 
 To rebuild the mesh data, open the approved outfit in Blender and run `tools/export_release_assets.py` with `src/Assets` and a JSON receipt path. The exporter uses the checked Semibot anchor measurements for the standing and crouching variants.
 

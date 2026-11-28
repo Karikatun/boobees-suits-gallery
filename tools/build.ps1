@@ -1,15 +1,33 @@
-[CmdletBinding()]
+[CmdletBinding(DefaultParameterSetName = 'Public')]
 param(
-    [string]$GameRoot = 'C:/Program Files (x86)/Steam/steamapps/common/REPO',
-    [string]$BepInExCore = (Join-Path $GameRoot 'BepInEx/core'),
-    [Parameter(Mandatory)][string]$RepoLibPath
+    [Parameter(ParameterSetName = 'Local', Position = 0)]
+    [string]$GameRoot,
+    [Parameter(ParameterSetName = 'Local', Position = 1)]
+    [string]$BepInExCore,
+    [Parameter(Mandatory, ParameterSetName = 'Local', Position = 2)]
+    [string]$RepoLibPath
 )
 $ErrorActionPreference = 'Stop'
 $project = Split-Path -Parent $PSScriptRoot
-$game = (Resolve-Path -LiteralPath $GameRoot).Path
-$core = (Resolve-Path -LiteralPath $BepInExCore).Path
-$repolib = (Resolve-Path -LiteralPath $RepoLibPath).Path
-$output = Join-Path $project '.local/build'
+if ($PSCmdlet.ParameterSetName -eq 'Local') {
+    if (!$PSBoundParameters.ContainsKey('GameRoot')) {
+        $GameRoot = 'C:/Program Files (x86)/Steam/steamapps/common/REPO'
+    }
+    if (!$PSBoundParameters.ContainsKey('BepInExCore')) {
+        $BepInExCore = Join-Path $GameRoot 'BepInEx/core'
+    }
+    $managed = (Resolve-Path -LiteralPath (Join-Path $GameRoot 'REPO_Data/Managed')).Path
+    $core = (Resolve-Path -LiteralPath $BepInExCore).Path
+    $repolib = (Resolve-Path -LiteralPath $RepoLibPath).Path
+    $output = Join-Path $project '.local/build'
+} else {
+    . (Join-Path $PSScriptRoot 'public-build-references.ps1')
+    $references = Get-PublicBuildReferences -CacheRoot (Join-Path $project '.local/build-references')
+    $managed = $references.Managed
+    $core = $references.BepInExCore
+    $repolib = $references.RepoLib
+    $output = Join-Path $project '.local/build-public'
+}
 $env:DOTNET_CLI_HOME = Join-Path $project '.local/dotnet'
 $env:DOTNET_NOLOGO = '1'
 $env:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
@@ -17,7 +35,7 @@ $env:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
 $manifestPath = Join-Path $project 'packaging/manifest.json'
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
 & dotnet build (Join-Path $project 'src/BoobeesSuits.csproj') -c Release --artifacts-path $output `
-    "-p:GameRoot=$game" "-p:BepInExCore=$core" "-p:RepoLibPath=$repolib" '-p:NuGetAudit=false' --ignore-failed-sources
+    "-p:ManagedRoot=$managed" "-p:BepInExCore=$core" "-p:RepoLibPath=$repolib" '-p:NuGetAudit=false' --ignore-failed-sources
 if ($LASTEXITCODE -ne 0) { throw 'Could not build Boobees Suits.' }
 
 $assembly = Join-Path $output 'bin/BoobeesSuits/release/BoobeesSuits.dll'

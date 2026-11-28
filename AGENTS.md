@@ -4,7 +4,15 @@
 
 ## Сборка из чистого клона
 
-Нужны PowerShell 7, .NET SDK, установленная игра и DLL из BepInExPack 5.4.2305 и REPOLib 4.5.1. В PowerShell из корня репозитория укажи пути к локальной игре и своему профилю BepInEx.
+Нужны PowerShell 7 и .NET SDK 8 или новее. Из корня репозитория выполни команду. При первом запуске нужен доступ к NuGet.org, NuGet BepInEx и Thunderstore.
+
+```powershell
+./tools/build.ps1
+```
+
+Скрипт скачивает зависимости в `.local/build-references/` и проверяет SHA-256 архивов перед извлечением DLL для компиляции. Используются [R.E.P.O.GameLibs.Steam 0.4.4-ngd.0](https://www.nuget.org/packages/R.E.P.O.GameLibs.Steam/0.4.4-ngd.0), UnityEngine.Modules 6000.3.26 из NuGet BepInEx, [BepInExPack 5.4.2305](https://thunderstore.io/c/repo/p/BepInEx/BepInExPack/v/5.4.2305/) и [REPOLib 4.5.1](https://thunderstore.io/c/repo/p/Zehs/REPOLib/v/4.5.1/). Эти версии дали DLL, побайтно совпадающую с опубликованной DLL 0.5.6, при сборке с SDK 10.0.404. Для сборки достаточно файлов репозитория и публичных зависимостей. Для запуска мода нужна R.E.P.O. 0.5.3.
+
+Чтобы собрать с DLL из своей установки игры и своего профиля BepInEx, укажи их явно.
 
 ```powershell
 ./tools/build.ps1 -GameRoot $gameRoot -BepInExCore "$profileRoot/BepInEx/core" -RepoLibPath $repoLibDll

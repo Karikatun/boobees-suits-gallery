@@ -1,0 +1,47 @@
+name: Clean hosted build
+
+on:
+  push:
+    branches: [codex/boobees-suits-source]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Build and verify package
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          ./tools/build.ps1
+          $manifest = Get-Content -Raw packaging/manifest.json | ConvertFrom-Json
+          $package = "dist/BoobeesSuits-$($manifest.version_number).zip"
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $zip = [IO.Compression.ZipFile]::OpenRead((Resolve-Path -LiteralPath $package).Path)
+          try {
+            $expected = @('manifest.json', 'README.md', 'icon.png', 'plugins/BoobeesSuits/BoobeesSuits.dll') | Sort-Object
+            $actual = @($zip.Entries | ForEach-Object FullName | Sort-Object)
+            if ($actual.Count -ne $expected.Count -or (Compare-Object $expected $actual)) {
+              throw "Unexpected ZIP entries: $($actual -join ', ')"
+            }
+            $dll = Join-Path $env:RUNNER_TEMP 'BoobeesSuits.dll'
+            [IO.Compression.ZipFileExtensions]::ExtractToFile($zip.GetEntry('plugins/BoobeesSuits/BoobeesSuits.dll'), $dll, $true)
+            $version = [Reflection.AssemblyName]::GetAssemblyName($dll).Version.ToString(3)
+            if ($version -ne $manifest.version_number) {
+              throw "DLL version $version does not match manifest version $($manifest.version_number)."
+            }
+            Write-Host "DLL SHA-256: $((Get-FileHash -LiteralPath $dll -Algorithm SHA256).Hash)"
+            Write-Host "Verified $package, four entries, DLL version $version."
+          } finally {
+            $zip.Dispose()
+          }
