@@ -1,0 +1,25 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>none</DebugType>
+    <ManagedRoot>$(GameRoot)/REPO_Data/Managed</ManagedRoot>
+    <BepInExCore Condition="'$(BepInExCore)' == ''">$(GameRoot)/BepInEx/core</BepInExCore>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp;UnityEngine;UnityEngine.CoreModule">
+      <HintPath>$(ManagedRoot)/%(Identity).dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExCore)/%(Identity).dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="REPOLib">
+      <HintPath>$(RepoLibPath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

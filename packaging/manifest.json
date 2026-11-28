@@ -1,0 +1,10 @@
+{
+  "name": "BoobeesSuits",
+  "version_number": "0.5.6",
+  "website_url": "",
+  "description": "Three Semibot outfits: the ghostly Boo-Bee, golden Sneaker Bee and festive New Year Bee.",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2305",
+    "Zehs-REPOLib-4.5.1"
+  ]
+}

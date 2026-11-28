@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>0.5.6</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony" HintPath="$(BepInExCore)/0Harmony.dll" Private="false" />
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>$(ManagedRoot)/%(Identity).dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <EmbeddedResource Include="Icons/*.png" LogicalName="BoobeesSuits.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="Assets/*" Exclude="Assets/Sneaker-*.png;Assets/Winter-*.png" LogicalName="BoobeesSuits.Assets.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="Assets/Winter-hat-emission.png" LogicalName="BoobeesSuits.Assets.%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>
