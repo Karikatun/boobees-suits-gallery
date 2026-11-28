@@ -1,6 +1,6 @@
 # Boobees Suits
 
-Three outfits for Semibots in R.E.P.O. 0.5.3.
+Three outfits for Semibots in R.E.P.O. 0.5.4. This build was checked against the game's Unity 6.3 managed assemblies. In-game testing is pending.
 
 - **Boo-Bee** includes ten ghost-bee pieces with a two-part hood, animated bodice, wings and striped socks.
 - **Sneaker Bee** includes eight pieces with a golden sweater, full sleeves, striped abdomen, wings, antennae and sneakers.

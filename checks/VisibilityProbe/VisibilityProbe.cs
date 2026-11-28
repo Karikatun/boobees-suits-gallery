@@ -11,7 +11,7 @@ using REPOLib.Modules;
 using UnityEngine;
 
 [BepInPlugin("BooBees.VisibilityProbe", "Boobees Visibility Probe", "1.0.0")]
-[BepInDependency("BooBees.BoobeesSuits", "0.5.6")]
+[BepInDependency("BooBees.BoobeesSuits", "0.5.7")]
 public sealed class VisibilityProbe : BaseUnityPlugin
 {
     private const BindingFlags All = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static;

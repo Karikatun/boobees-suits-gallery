@@ -1,0 +1,40 @@
+{
+  "archive": "BoobeesSuits-0.5.7.zip",
+  "archiveBytes": 13053648,
+  "archiveSha256": "90BD1C0808CFA9DFB4105AEF156C54F760D7E9E19C2341A2CBC2FF745A227E20",
+  "dllSha256": "235C564B955DF16DD04460359090A6926D88F8C96CB64723D660D112D8D2132E",
+  "game": {
+    "version": "0.5.4",
+    "steamBuild": "26893562",
+    "windowsDepotManifest": "5967301047733798532",
+    "unity": "6000.3.28f1 (405e1800b434)",
+    "assemblyCSharpSha256": "FD720445EA0F5912062E71C9CABC90CDB17D95576112E48A4758BAA29B5E878A",
+    "versionEvidence": "Serialized BuildManager in level0 (path ID 3135) references Version - RELEASE in sharedassets0.assets (path ID 14511) with title v0.5.4. The globalgamemanagers file independently contains 0.5.4. The historical slot-map label 0.5.3 was hardcoded alongside the same Steam build ID."
+  },
+  "build": {
+    "sdk": "10.0.404",
+    "targetFramework": "netstandard2.1",
+    "bepInExPack": "5.4.2305",
+    "repoLib": "4.5.1",
+    "publicReferenceVersions": "R.E.P.O.GameLibs.Steam 0.4.4-ngd.0 and UnityEngine.Modules 6000.3.26",
+    "publicAndExactLocalArchivesByteIdentical": true,
+    "visibilityProbeBuiltAgainstExactLocalAssemblies": true
+  },
+  "checks": {
+    "zipEntries": 4,
+    "zipCrc": "pass",
+    "iconPixels": [256, 256],
+    "manifestAssemblyAndPluginVersion": "0.5.7",
+    "embeddedResourcesByteIdenticalToPublished056": 51,
+    "pluginGameMemberReferencesResolved": 21,
+    "pluginRepoLibMemberReferencesResolved": 2,
+    "repoLibGameMemberReferencesResolved": 123,
+    "pluginHarmonyTargetsMatched": 7,
+    "pluginReflectionFieldsMatched": 2,
+    "probeReflectionMethodsMatched": 16,
+    "probeReflectionFieldsMatched": 3,
+    "hostedCi": "CI build and ZIP verification commands passed locally on Windows. Hosted Windows and Ubuntu jobs are pending.",
+    "inGame": "Pending",
+    "harness2": "Propose-Probe-Compose methodology only"
+  }
+}

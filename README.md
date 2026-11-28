@@ -21,11 +21,11 @@ New Year Bee has nine separate pieces. Its antenna lights are part of the hat. T
 
 ## Install
 
-Import the ZIP as a local mod in your R.E.P.O. mod manager. The target setup is R.E.P.O. 0.5.3 with BepInExPack 5.4.2305 and REPOLib 4.5.1. For manual installation, copy `plugins/BoobeesSuits/BoobeesSuits.dll` under `BepInEx/plugins/BoobeesSuits/` after installing the dependencies. Boobees Valuables is an art reference and a separate download.
+Import the ZIP as a local mod in your R.E.P.O. mod manager. Version 0.5.7 targets R.E.P.O. 0.5.4 (Unity 6000.3.28f1) with BepInExPack 5.4.2305 and REPOLib 4.5.1. The mod and its visibility probe compile against this game build. In-game testing is pending. For manual installation, copy `plugins/BoobeesSuits/BoobeesSuits.dll` under `BepInEx/plugins/BoobeesSuits/` after installing the dependencies. Boobees Valuables is an art reference and a separate download.
 
 ## Build
 
-Run `./tools/build.ps1` from the repository root with PowerShell 7 and .NET SDK 8 or later. The first build downloads and verifies pinned public compile-time dependencies. The build embeds the outfit meshes, textures and icons, then writes the Thunderstore ZIP to `dist/`. To build against an installed copy of the game, see the local build command in [AGENTS.md](AGENTS.md).
+Run `./tools/build.ps1` from the repository root with PowerShell 7 and the .NET SDK 10 version pinned in `global.json` (10.0.404). The DLL targets .NET Standard 2.1 for Unity Mono. The first build downloads and verifies public compile-time dependencies, including the available R.E.P.O. 0.4.4 reference assembly and Unity 6000.3.26 modules. The build embeds the outfit meshes, textures and icons, then writes the Thunderstore ZIP to `dist/`. To compile against the exact 0.5.4 game assemblies, use the local build command in [AGENTS.md](AGENTS.md).
 
 To rebuild the mesh data, open the approved outfit in Blender and run `tools/export_release_assets.py` with `src/Assets` and a JSON receipt path. The exporter uses the checked Semibot anchor measurements for the standing and crouching variants.
 

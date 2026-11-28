@@ -34,9 +34,14 @@ $env:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
 
 $manifestPath = Join-Path $project 'packaging/manifest.json'
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
-& dotnet build (Join-Path $project 'src/BoobeesSuits.csproj') -c Release --artifacts-path $output `
-    "-p:ManagedRoot=$managed" "-p:BepInExCore=$core" "-p:RepoLibPath=$repolib" '-p:NuGetAudit=false' --ignore-failed-sources
-if ($LASTEXITCODE -ne 0) { throw 'Could not build Boobees Suits.' }
+Push-Location -LiteralPath $project
+try {
+    & dotnet build 'src/BoobeesSuits.csproj' -c Release --artifacts-path $output `
+        "-p:ManagedRoot=$managed" "-p:BepInExCore=$core" "-p:RepoLibPath=$repolib" '-p:NuGetAudit=false' --ignore-failed-sources
+    if ($LASTEXITCODE -ne 0) { throw 'Could not build Boobees Suits.' }
+} finally {
+    Pop-Location
+}
 
 $assembly = Join-Path $output 'bin/BoobeesSuits/release/BoobeesSuits.dll'
 if ([System.Reflection.AssemblyName]::GetAssemblyName($assembly).Version.ToString(3) -ne $manifest.version_number) {

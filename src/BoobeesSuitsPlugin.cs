@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace BoobeesSuits;
 
-[BepInPlugin("BooBees.BoobeesSuits", "Boobees Suits", "0.5.6")]
+[BepInPlugin("BooBees.BoobeesSuits", "Boobees Suits", "0.5.7")]
 [BepInDependency("REPOLib", "4.5.1")]
 public sealed class BoobeesSuitsPlugin : BaseUnityPlugin
 {
@@ -24,7 +24,7 @@ public sealed class BoobeesSuitsPlugin : BaseUnityPlugin
         var shader = Shader.Find("Standard");
         if (iconField?.FieldType != typeof(Sprite) || shader == null || !shader.isSupported)
         {
-            Logger.LogError("Boobees Suits needs the R.E.P.O. 0.5.3 cosmetic icon and Standard shader.");
+            Logger.LogError("Boobees Suits needs the R.E.P.O. 0.5.4 cosmetic icon and Standard shader.");
             return;
         }
 
